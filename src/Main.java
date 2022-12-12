@@ -9,6 +9,9 @@ public class Main {
                 case (1):
                     areaTriangulo();
                     break;
+            case(2):
+                areaCirculo();
+                break;
             }
         } while(continuar);
     }
@@ -59,4 +62,26 @@ public class Main {
             }
         } while(true);
     }
+
+    private static void areaCirculo() {
+        double r, area;
+        Scanner sc;
+        do {
+            sc = new Scanner(System.in);
+            System.out.print("Introduzca el radio del círculo: ");
+            try {
+                r = sc.nextDouble();
+                if(r > 0) {
+                    area = Math.pow(r, 2)*Math.PI;
+                    System.out.println("El área del círculo es " + area);
+                } else {
+                    System.out.println("error");
+                }
+            } catch (Exception e) {
+                System.out.println("bad format");
+            }
+        } while(true);
+    }
+
+
 }
