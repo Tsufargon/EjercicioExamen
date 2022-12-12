@@ -12,6 +12,9 @@ public class Main {
             case(2):
                 areaCirculo();
                 break;
+            case(3):
+                volumenCono();
+                break;
             }
         } while(continuar);
     }
@@ -62,7 +65,6 @@ public class Main {
             }
         } while(true);
     }
-
     private static void areaCirculo() {
         double r, area;
         Scanner sc;
@@ -82,6 +84,30 @@ public class Main {
             }
         } while(true);
     }
-
+    private static void volumenCono() {
+        double r, h, volumen;
+        Scanner sc;
+        do {
+            sc = new Scanner(System.in);
+            System.out.print("Introduzca el radio de la base: ");
+            try {
+                r = sc.nextDouble();
+                if(r > 0) {
+                    System.out.print("Introduzca la altura del cono: ");
+                    h = sc.nextDouble();
+                    if(h > 0) {
+                        volumen = 1/3 * h * Math.PI * Math.pow(r, 2);
+                        System.out.println("El volumen del cono es " + volumen);
+                    } else {
+                        System.out.println("error");
+                    }
+                } else {
+                    System.out.println("error");
+                }
+            } catch (Exception e) {
+                System.out.println("bad format");
+            }
+        } while(true);
+    }
 
 }
