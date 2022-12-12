@@ -20,6 +20,10 @@ public class Main {
                 volumen = volumenCilindro();
                 System.out.println("El volumen del cilindro es " + volumen);
                 break;
+            case(5):
+                volumen = volumenEsfera();
+                System.out.println("El volumen de la esfera es " + volumen);
+                break;
             }
         } while(continuar);
     }
@@ -139,4 +143,25 @@ public class Main {
             }
         } while(true);
     }
+    private static double volumenEsfera() {
+        double r, volumen;
+        Scanner sc;
+        do {
+            sc = new Scanner(System.in);
+            System.out.print("Introduzca el radio de la esfera: ");
+            try {
+                r = sc.nextDouble();
+                if(r > 0) {
+                    volumen = 4/3 * Math.PI * Math.pow(r, 3);
+                    return volumen;
+                } else {
+                    System.out.println("error");
+                }
+            } catch (Exception e) {
+                System.out.println("bad format");
+            }
+        } while(true);
+    }
+
+
 }
