@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         boolean continuar = true;
+        double volumen;
         do {
             switch (getCorrectOption()) {
                 case (1):
@@ -14,6 +15,10 @@ public class Main {
                 break;
             case(3):
                 volumenCono();
+                break;
+            case(4):
+                volumen = volumenCilindro();
+                System.out.println("El volumen del cilindro es " + volumen);
                 break;
             }
         } while(continuar);
@@ -109,5 +114,29 @@ public class Main {
             }
         } while(true);
     }
-
+    private static double volumenCilindro() {
+        double h, r, volumen;
+        Scanner sc;
+        do {
+            sc = new Scanner(System.in);
+            System.out.print("Introduzca el radio de la base: ");
+            try {
+                r = sc.nextDouble();
+                if(r > 0) {
+                    System.out.println("Introduzca la altura del cilindro: ");
+                    h = sc.nextDouble();
+                    if(h > 0) {
+                        volumen = h * Math.pow(r, 2)*Math.PI;
+                        return volumen;
+                    } else {
+                        System.out.println("error");
+                    }
+                } else {
+                    System.out.println("error");
+                }
+            } catch (Exception e) {
+                System.out.println("bad format");
+            }
+        } while(true);
+    }
 }
