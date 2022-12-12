@@ -24,6 +24,8 @@ public class Main {
                 volumen = volumenEsfera();
                 System.out.println("El volumen de la esfera es " + volumen);
                 break;
+            case(6):
+                continuar = cerrarMenú();
             }
         } while(continuar);
     }
@@ -162,6 +164,7 @@ public class Main {
             }
         } while(true);
     }
-
-
+    private static boolean cerrarMenú() {
+        return false;
+    }
 }
