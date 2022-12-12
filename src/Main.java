@@ -37,7 +37,9 @@ public class Main {
             System.out.print("[1] Area triangulo\n" +
                     "[2] Area círculo\n" +
                     "[3] Area del cono\n" +
-                    "[4] Area del cilindro\n" +
+                    "[4] Volumen del cilindro\n" +
+                    "[5] Volumen de la esfera\n" +
+                    "[6] Salir\n" +
                     "> ");
             try {
                 resp = sc.nextInt();
